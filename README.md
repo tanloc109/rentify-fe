@@ -1,50 +1,57 @@
-# React + TypeScript + Vite
+# Agile Assessment UI  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend for the Agile Assessment project, built using **React** and **Vite**. The project offers a fast development environment and optimized production builds.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation  
 
-## Expanding the ESLint configuration
+### Prerequisites  
+Before you begin, ensure you have the following installed:  
+1. **Node.js** (v22.13.0)  
+   - Download and install from [Node.js](https://nodejs.org/).  
+2. **npm** (v10.9.2)  
+   - Verify installation with:  
+     ```bash
+     node -v
+     npm -v
+     ```  
+   - If `npm` is not at version 10.9.2, update it using:  
+     ```bash
+     npm install -g npm@10.9.2
+     ```  
+3. **Git**  
+   - Download and install from [Git](https://git-scm.com/downloads).  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+### Setting Up the Environment  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Clone the Repository**:  
+   Clone the project from GitLab:  
+   ```bash
+   git clone https://gitsource.axonactive.com/agile-tools/agile-assessment/agile-assessment-ui.git
+   cd agile-assessment-ui
+2. **Create a .env File:**
+   Copy the structure from the .env.template file included in the project:
+   ```bash
+   VITE_NET_API_BASE_URL=YOUR_NET_URL
+   VITE_JAVA_API_BASE_URL=YOUR_JAVA_URL
+   VITE_AUTHEN_API_BASE_URL=YOUR_AUTHEN_URL
+   ```
+   
+   Replace YOUR_NET_URL, YOUR_JAVA_URL and YOUR_AUTHEN_URL with the actual server URLs. Example:
+   ```bash
+   VITE_NET_API_BASE_URL='http://localhost:8080/api' 
+   VITE_JAVA_API_BASE_URL='http://localhost:8080/agile-assessment/api'
+   VITE_JAVA_API_BASE_URL='http://localhost:8080/agile-authentication/api'
+3. **Install Dependencies:**
+    ```bash
+    npm install
+4. **Running the Application**:
+    ```bash
+    npm run dev
+    
+### Storybook
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+You can view the Storybook at [http://localhost:3000/storybook](http://localhost:3000/storybook) once the application is running.
