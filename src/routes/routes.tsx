@@ -3,11 +3,18 @@ import NotFoundPage from "./NotFoundPage.tsx";
 import Login from "./Login.tsx";
 import NotAuthorized from "./NotAuthorizedPage.tsx";
 import CarPage from "./CarPage.tsx";
-import EmptyPage from "./EmptyPage.tsx";
 import ContactPage from "./ContactPage.tsx";
 import AboutPage from "./AboutPage.tsx";
 import CarDetail from "../components/car/CarDetail.tsx";
 import RegisterPage from "./RegisterPage.tsx";
+import CarManagement from "./CarManagement.tsx";
+import BrandManagement from "./BrandManagement.tsx";
+import CarTypeManagement from "./CarTypeManagement.tsx";
+import UserManagement from "./UserManagement.tsx";
+import WalletManagement from "./WalletManagement.tsx";
+import RentalManagement from "./RentalManagement.tsx";
+import Rental from "./Rental.tsx";
+import WalletPage from "./WalletPage.tsx";
 
 const publicRoutes = [
     { path: "/", component: HomePage },
@@ -22,15 +29,22 @@ const publicRoutes = [
 ];
 
 const adminRoutes = [
-    { path: "/empty", component: EmptyPage },
+    { path: "/car-management", component: CarManagement },
+    { path: "/brand-management", component: BrandManagement },
+    { path: "/type-management", component: CarTypeManagement },
+    { path: "/user-management", component: UserManagement },
+    { path: "/wallet-management", component: WalletManagement },
+    { path: "/rental-management", component: RentalManagement },
 ];
 
-
-const headOfDepartmentAndAdminRoutes = [
+const renterAndHostRoutes = [
+    { path: "/cars", component: CarPage },
+    { path: "/rentals", component: Rental },
+    { path: "/wallet", component: WalletPage },
 ]
 
 const privateRoutes = [
 
 ];
 
-export { adminRoutes, privateRoutes, publicRoutes, headOfDepartmentAndAdminRoutes };
+export { adminRoutes, privateRoutes, publicRoutes, renterAndHostRoutes };

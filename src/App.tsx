@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { publicRoutes, adminRoutes } from './routes/routes';
+import { publicRoutes, adminRoutes, renterAndHostRoutes } from './routes/routes';
 import { Box } from '@mui/material';
 import { ToastContainer } from 'react-toastify';
 import ProtectedRoutes from './utils/protectedRoutes';
@@ -34,6 +34,18 @@ function App() {
                                 <Routes>
                                     <Route element={<ProtectedRoutes roleName={['ADMIN']} />}>
                                         {adminRoutes.map((route, index) => {
+                                            const Page = route.component;
+                                            return (
+                                                <Route
+                                                    key={index}
+                                                    path={route.path}
+                                                    element={<Page />}
+                                                />
+                                            );
+                                        })}
+                                    </Route>
+                                    <Route element={<ProtectedRoutes roleName={['RENTER', 'HOST']} />}>
+                                        {renterAndHostRoutes.map((route, index) => {
                                             const Page = route.component;
                                             return (
                                                 <Route

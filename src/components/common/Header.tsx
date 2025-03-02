@@ -9,22 +9,32 @@ import CustomButton from "./CustomButton.tsx";
 import { useUserContext } from "../../contexts/UserContext.tsx";
 import { useTokenContext } from '../../contexts/TokenContext.tsx';
 
-const initialNavLinks = [
-    { name: 'Cars', path: '/cars' },
-    { name: 'About', path: '/abouts' },
-    { name: 'Contact', path: '/contacts' },
-];
-
-const getNavLinks = (role: any) => {
+const getNavLinks = (role: string | undefined) => {
     switch (role) {
         case 'ADMIN':
-            return [...initialNavLinks, { name: 'Admin', path: '/admin' }];
+            return [
+                { name: 'Car', path: '/car-management' },
+                { name: 'Brand', path: '/brand-management' },
+                { name: 'Type', path: '/type-management' },
+                { name: 'User', path: '/user-management' },
+                { name: 'Wallet', path: '/wallet-management' },
+                { name: 'Rental', path: '/rental-management' },
+            ];
         case 'RENTER':
-            return [...initialNavLinks, { name: 'Renter', path: '/renter' }];
         case 'HOST':
-            return [...initialNavLinks, { name: 'Host', path: '/host' }];
+            return [
+                { name: 'Cars', path: '/cars' },
+                { name: 'Rental', path: '/rentals' },
+                { name: 'Wallet', path: '/wallet' },
+                { name: 'About', path: '/abouts' },
+                { name: 'Contact', path: '/contacts' },
+            ];
         default:
-            return initialNavLinks;
+            return [
+                { name: 'Cars', path: '/cars' },
+                { name: 'About', path: '/abouts' },
+                { name: 'Contact', path: '/contacts' },
+            ];
     }
 };
 
@@ -45,8 +55,8 @@ const Header = () => {
     };
 
     const handleLogout = () => {
-        setUserData(null); // Clear userData in context
-        setTokens({ accessToken: null, refreshToken: null }); // Clear tokens in context
+        setUserData(null);
+        setTokens({ accessToken: null, refreshToken: null });
         navigate('/login');
     };
 
