@@ -1,3 +1,6 @@
+.vscode
+.idea
+
 # Logs
 logs
 *.log
@@ -15,13 +18,9 @@ dist-ssr
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# Test coverage folder
-coverage

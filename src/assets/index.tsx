@@ -1,6 +1,0 @@
-export { default as rentifyLogo } from "./rentify-logo.png"
-export { default as iconLogo } from "./icon-logo.png"
-export { default as rentifyBg } from "./rentify-bg.jpg"
-export { default as notFoundLogo } from "./404.png"
-export { default as notAuthorizedLogo } from "./403.png"
-export { default as warningFieldIcon } from "./warning-icon.png"

@@ -1,0 +1,82 @@
+.child-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.child-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.child-card .card-body {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.child-card .card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.child-card .card-subtitle {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.child-card .card-text {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.child-card .card-text strong {
+    color: #007bff;
+}
+
+.child-card .btn {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.child-card .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.child-card .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.child-card .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.child-card .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.child-card .btn-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.child-card .btn-info:hover {
+    background-color: #117a8b;
+    border-color: #117a8b;
+}
+
+.child-card .d-flex {
+    gap: 10px;
+}
